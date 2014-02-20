@@ -1,0 +1,7 @@
+function yaw_dot = yawDynamics(yaw, w1, w2, w3, w4, kM, Izz)
+
+yaw_dot = zeros(2,1);
+yaw_dot(1) = yaw(2);
+yaw_dot(2) = L*kF*(w2^2-w4^2)/Izz;
+
+end
