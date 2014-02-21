@@ -68,7 +68,7 @@ plot(0:0.01:T, X(2,:),'g');
 
 hold on
 plot(0:0.01:T, X(3,:))
-
+legend('x', 'y', 'z');
 
 figure(2)
 plot(0:0.01:T, X(4,:),'r');
@@ -78,6 +78,7 @@ plot(0:0.01:T, X(5,:),'g');
 
 hold on
 plot(0:0.01:T, X(6,:))
+legend('v_x', 'v_y', 'v_z');
 % plot(dd, 'y')
 % hold on
 
