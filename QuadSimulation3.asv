@@ -17,6 +17,8 @@ J = diag([2.32e-3, 2.32e-3 4.41e-3])*1;
 L = 0.175;
 kF =  9.45432224e-08;
 kM = 0.45*L*kF;
+g = 9.8;
+M = 0.853;
 
 T = 10;
 TrajSeg = 4;
@@ -34,7 +36,7 @@ for t = 0 : 0.01: T
     state_reference = Traj(:,s);
     state_reference = [0.1 0 0.1 0 0 0 0 0 0]';
     [u_p, position_err_integral] = ComputePositionControl3(state_reference, state(1:6), position_err_integral); %acceleration
-    u_p
+    u_p = u_p+M*[0 0 g]*
     if u_p>2.8*4
         u_p = 2.8*4;
     end
